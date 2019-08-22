@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ arr=[10,2,3,5,[12,34,9,8]];
+// 1、遍历输出数组中的元素
+// 2、求数组的和
+// 3、求数组的平均数
+// 4、求数组中的最大值和最小值
+
+// 使用join()将多维数组转化成一维数组
+for(var i=0;i<arr.length;i++){
+    console.log(arr[i]);
+    // sum += arr[i];
+}
+var arr1=arr.pop();
+var arr3=arr.concat(arr1);
+console.log(arr3);
+
+var max=arr3[0];
+var min=arr3[0];
+var sum=0;      
+for(var i=0;i<arr3.length;i++){
+  if(arr3[i]>max){
+      max=arr3[i];
+  }
+  if(arr3[i]<min){
+      min=arr3[i];
+  }
+  sum += arr3[i];
+}
+console.log(sum);
+var adv=sum/arr.length;
+console.log(adv);
+console.log(max);
+console.log(min);
+
+
+var arr3=['1','2'];
+var arr4=arr3.join('');
+console.log(arr4);
+console.log(Number(arr4));
+var arr5=arr4.split('');
+console.log(arr5);
+
+console.log(Math.random());
+</script>
+</html>
