@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//1,打印三角形；
+ for(var i=0;i<9;i++){
+     for(var j=0;j<=i;j++){
+         document.write('*');
+     }
+     document.write("<br>");
+ }
+//  document.write('<div align="center">');
+
+    for(var i =0;i<5;i++){
+         for(var j=5;j>i;j--){
+             document.write("好");
+         }
+         for(var k=0;k<2*i+1;k++){
+             document.write("是");
+         }
+         
+         document.write("</br>")
+     }
+
+//  document.write('<div>');
+ // 2、100元购物卡，牙刷5元，香皂2元、洗发水15元 100元正好花完有多少种可能
+
+ var bs = 0;
+    for(var i = 0;i<=20;i++){
+        for(var j = 0;j <= 50;j++){
+            for(var k = 0;k <= 6;k++){
+                if(i*5 + j*2 + k*15 == 100){
+                    bs++
+                }
+            }
+        }
+    }
+    console.log(bs);
+ // 3、大马驮2石粮食，中马驮1石粮食，两头小马驮一石粮食，要用100匹马，驮100石粮食，该如何调配？
+ var j=0;
+  for(var i = 0;i <= 50;i++){
+        for(var j=0;j <= 100;j++){
+            for(var k = 0;k <= 100;k++){
+                if(i*2+j*1+k/2 == 100 && i+j+k == 100){
+                    document.write("大马："+i+"匹"+"");
+                    document.write('中马：'+j+"匹"+"");
+                    document.write('小马：'+k+"匹"+"");
+                    j++;
+                }
+            }
+        }
+     }
+     console.log(j);
+ // 4、有一个棋盘，有64个方格，在第一个方格里面放1粒芝麻重量是0.00001kg，第二个里面放2粒，第三个里面放4粒，
+ // 棋盘上放的所有芝麻的重量
+ var sum = 0;
+    for(var i = 1;i <= 64;i++){
+        var num = 1;
+        for(var j = 0;j < i-1;j++){
+            num = num*2;
+        }
+        sum = sum+num;
+    }
+    // alert(sum*0.00001)
+ // 5、写出一个javascript的函数，实现对一个数组去重的功能。
+ function add(arr2){
+    var arr1=[];
+    for(var i=0;i<arr2.length;i++){ 
+    if(arr1.indexOf(arr2[i])==-1){
+       arr1.push(arr2[i]);
+   }
+ }
+ return console.log(arr1);
+ }
+//  add(arr);
+//   console.log(arr1);
+ // 6、100以内的质数、只能被1和自己整除
+//  var flag = true
+    for(var i = 2;i < 100;i++){
+        flag = true;
+        for(var j = 2;j < i;j++){
+            if(i%j == 0){
+                flag = false;
+            }
+        }if(flag){
+            document.write(i+'，')
+        }
+    }
+    var a=2;
+    var b=7;
+    var x=5;
+    console.log(a+b+x);
+ // 7、计算水仙花数，三位数 abc , abc = a*a*a+b*b*b+c*c*c
+    for(var i = 100;i < 999;i++){
+        var bai = parseInt(i/100);
+        var shi = parseInt((i-bai*100)/10);
+        var ge = i - bai*100 - shi*10;
+        if(bai*bai*bai+shi*shi*shi+ge*ge*ge == i){
+            document.write(i  + ",");
+        }
+    }
+</script>
+</html>
